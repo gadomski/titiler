@@ -112,6 +112,17 @@ if not api_settings.disable_cog:
         tags=["Cloud Optimized GeoTIFF"],
     )
 
+    agol_cog = TilerFactory(
+        router_prefix="/agol/1.0.0",
+        extensions=[],
+    )
+
+    app.include_router(
+        cog.router,
+        prefix="/agol/1.0.0",
+        tags=["ArcGIS Online endpoints (hack)"],
+    )
+
 
 ###############################################################################
 # STAC endpoints
